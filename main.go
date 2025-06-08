@@ -30,9 +30,18 @@ func newSimpleServer(addr string) *simpleServer {
 }
 
 type LoadBalancer struct {
-	port           string
-	rounRobinCount int
-	Servers        []Server
+	port            string
+	roundRobinCount int
+	servers         []Server
+}
+
+func NewLoadBalancer(port string, servers []Server) *LoadBalancer {
+	return &LoadBalancer{
+		port:            port,
+		roundRobinCount: 0,
+		servers:         servers,
+	}
+
 }
 
 func handleError(err error) {
