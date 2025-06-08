@@ -22,6 +22,12 @@ func newSimpleServer(addr string) *simpleServer {
 	}
 }
 
+type LoadBalancer struct {
+	port           string
+	rounRobinCount int
+	Servers        []Server
+}
+
 func handleError(err error) {
 	if err != nil {
 		fmt.Printf("error: %v\n", err)
