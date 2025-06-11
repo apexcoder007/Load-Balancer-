@@ -1,4 +1,4 @@
-**Project Title: Load Balancer**
+# Project Title: Load Balancer #
 
 ## Overview
 
@@ -73,3 +73,5 @@ Common algorithms include round-robin, least connections, and IP hash. This exam
   * `serveProxy()`: Logs and forwards requests.
 
 ---
+
+
