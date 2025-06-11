@@ -6,17 +6,14 @@ import (
 )
 
 func main() {
-	// List your backends here.
 	servers := []Server{
 		newSimpleServer("https://www.duckduckgo.com"),
 		newSimpleServer("https://www.facebook.com"),
 		newSimpleServer("https://www.google.com"),
 	}
 
-	// Create the balancer.
 	lb := NewLoadBalancer("8000", servers)
 
-	// Hook up the HTTP handler.
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		lb.serveProxy(w, r)
 	})
