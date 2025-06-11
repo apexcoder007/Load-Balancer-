@@ -1,4 +1,4 @@
-# Project Title: Load Balancer #
+# Load Balancer  #
 
 ## Overview
 
